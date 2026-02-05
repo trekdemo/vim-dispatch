@@ -204,6 +204,22 @@ to the "kitten @ launch" command.
 >
         let g:dispatch_kitty_bias = 20
 <
+WezTerm ~
+
+Foreground makes open in a split at the bottom.  The closure of the pane
+triggers a |VimResized| event which loads the results into the quickfix list
+if callbacks are not supported.
+
+This handler requires running inside wezterm terminal.  No additional
+configuration is necessary as wezterm supports CLI control by default.
+
+See https://wezterm.org/cli/cli/index.html
+
+To control the split size for foreground makes, set the percent parameter
+which is passed as "--percent=<num>" to the "wezterm cli split-pane" command.
+>
+        let g:dispatch_wezterm_percent = 30
+<
 Job ~
 
 Uses the |job| support in Vim 8 and Neovim to update the quickfix list in real
