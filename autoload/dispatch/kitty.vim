@@ -56,7 +56,7 @@ function! s:make(request) abort
 
   let cmd = s:kitty_launch_cmd(type, a:request, dispatch#prepare_start(a:request, cmd_with_capturing, 'make'))
   let output = system(cmd)
-  let window_id = matchstr(output, '^\d\+$')
+  let window_id = matchstr(output, '\d\+')
 
   if !empty(window_id)
     let s:waiting[window_id] = a:request
