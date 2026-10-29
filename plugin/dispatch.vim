@@ -88,6 +88,7 @@ if !exists('g:dispatch_handlers')
   let g:dispatch_handlers = [
         \ 'tmux',
         \ 'kitty',
+        \ 'rex',
         \ 'job',
         \ 'screen',
         \ 'terminal',

@@ -204,6 +204,20 @@ to the "kitten @ launch" command.
 >
         let g:dispatch_kitty_bias = 20
 <
+Rex ~
+
+Fires when Vim runs inside a Rex terminal and the rex CLI is on the PATH.
+Foreground makes open in a split below Vim's block.  Once the command exits,
+its output is captured with "rex capture" and the split is closed.  The
+closure of the split triggers a |VimResized| event which loads the results
+into the quickfix list if callbacks are not supported.
+
+The split gets 30 percent of the space by default.  To change it:
+>
+        let g:dispatch_rex_ratio = 20
+<
+See https://www.superlogical.com/rex/docs/automate/cli
+
 Job ~
 
 Uses the |job| support in Vim 8 and Neovim to update the quickfix list in real
